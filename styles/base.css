@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #003366;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1, h2 {
+    font-size: 1.5rem;
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+header .course-title {
+    color: gold;  
+}
+
+nav {
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.about-content p{
+    padding: 0.5rem;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.card img{
+    width: 120px;
+    border-radius: 4px;
+    margin-left: 1rem;
+    padding: 1rem; 
+}
+
+.about-content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.location {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.location img {
+    width: 100px;
+    height: auto;
+    border: 1px solid #aaa;
+}
+
+.resources{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.resources a {
+    text-decoration: underline;
+    color: purple;
+}
+
+h3 {
+    text-align: center;
+}
+
+em {
+
+}
+
+.resources ul {
+    list-style-type: disc;
+    padding: 1rem;
+    padding-left: 1rem;
+}
+
+footer {
+    text-align: center;
+    background-color: #003366;
+    color: #fff;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
