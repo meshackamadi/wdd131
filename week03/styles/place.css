@@ -1,0 +1,113 @@
+:root {
+  --primary-color: #002366;
+  --accent-color: 	#009A44;
+  --text-color: #333;
+  --bg-color: #f9f9f9;
+  --font-main: 'Segoe UI', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+    position: relative;
+    font-family: var(--font-main);
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+header {
+  background-color: var(--accent-color);
+  color: white;
+  text-align: center;
+  padding: 2.5rem;
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 20px solid #002366;
+}
+
+picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid #ccc;
+}
+
+.data {
+  top: 20px;
+  left: 20px;
+}
+
+.weather {
+  bottom: 20px;
+  right: 20px;
+}
+
+.data, .weather {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1rem 1.25rem;
+  max-width: 300px;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  position: absolute;
+}
+
+.data h2, .weather h2{
+  background-color: var(--primary-color, #007849);
+  color: white;
+  padding: 1rem;
+  font-size: 1.8rem;
+  margin: -0.4rem 1.20rem 1rem -2.25rem; /* align the header bar edge-to-edge */
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+
+.label {
+  font-weight: bold;
+  display: inline-block;
+  min-width: 110px
+}
+
+.weather h2::after {
+  content: " ⛅";
+  display: none;
+}
+
+.weather-icon {
+  display: block;
+  width: 40px;
+  margin: 0 auto 1rem;
+}
+
+footer {
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  padding: 2.5rem;
+  background-color: var(--accent-color)
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .weather-icon {
+    display: none;
+  }
+
+  .weather h2::after {
+    display: inline;
+  }
+}
