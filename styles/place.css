@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #002366;
-  --accent-color: 	#00713a;
+  --primary-color:#002366;
+  --accent-color:#005c2e;
   --text-color: #333;
-  --bg-color: #f9f9f9;
+  --bg-color: #ffffff;
   --font-main: 'Segoe UI', sans-serif;
 }
 
@@ -25,7 +25,7 @@ body {
 
 header {
   background-color: var(--accent-color);
-  color: #f0f0f0;
+  color: #ffffff;
   text-align: center;
   padding: 2.5rem;
   position: relative;
@@ -66,15 +66,14 @@ section {
 }
 
 .data h2, .weather h2{
-  background-color: var(--primary-color, #007849);
-  color: white;
+  background-color: var(--primary-color, #006837);
+  color: #ffffff;
   padding: 1rem;
   font-size: 1.8rem;
   margin: -0.4rem 1.20rem 1rem -2.25rem; /* align the header bar edge-to-edge */
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
-
 
 .label {
   font-weight: bold;
@@ -96,7 +95,7 @@ section {
 footer {
   text-align: center;
   font-size: 1rem;
-  color: white;
+  color: #ffffff;
   padding: 2.5rem;
   background-color: var(--accent-color)
 }
