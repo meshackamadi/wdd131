@@ -66,6 +66,7 @@ main {
 }
 
 .temple-card {
+  min-height: 300px;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 10px;

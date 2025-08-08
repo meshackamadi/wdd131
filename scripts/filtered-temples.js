@@ -84,7 +84,7 @@ function createTempleCard(temple) {
   card.className = 'temple-card';
   card.innerHTML = `
     <h3>${temple.templeName}</h3>
-    <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+    <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy" width-"400" height="250">
     <p><strong>Location:</strong> ${temple.location}</p>
     <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
     <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
