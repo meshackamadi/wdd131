@@ -146,10 +146,3 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("lastModified").textContent = document.lastModified;
   displayTemples(); // show all initially
 });
-
-// ====== 1. Footer Date Logic ======
-/*const currentYear = new Date().getFullYear();
-document.getElementById("year").textContent = currentYear;
-
-const lastModified = document.lastModified;
-document.getElementById("lastModified").textContent = lastModified; */
