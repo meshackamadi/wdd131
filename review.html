@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Submitted</title>
+    <link rel="stylesheet" href="styles/forms.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You!</h1>
+        <p>Your review has been submitted successfully.</p>
+        
+        <div id="reviewDetails"></div>
+        
+        <div class="counter-message">
+            <p>You have submitted <span id="reviewCounter">0</span> reviews in this session.</p>
+        </div>
+        
+        <div class="form-group">
+            <a href="forms.html" class="back-button">Submit Another Review</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Product Reviews. All rights reserved. ❤️ Meshack Amadi ❤️ Rivers State ❤️ Nigeria</p>
+    </footer>
+    
+    <script>
+        // Display submitted data from URL parameters
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const reviewDetails = document.getElementById('reviewDetails');
+            
+            let html = '<div class="submitted-data"><h3>Your Review Details:</h3><ul>';
+            
+            for (const [key, value] of params) {
+                if (value) {
+                    // Format the key for display
+                    const displayKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+                    
+                    // Special handling for rating (convert to stars)
+                    if (key === 'rating') {
+                        const stars = '☆'.repeat(5) + '★'.repeat(value);
+                        html += `<li><strong>${displayKey}:</strong> ${stars}</li>`;
+                    } 
+                    // Special handling for checkboxes (comma separated)
+                    else if (key === 'usefulFeatures') {
+                        const features = value.split(',').map(f => 
+                            f.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+                        ).join(', ');
+                        html += `<li><strong>${displayKey}:</strong> ${features}</li>`;
+                    }
+                    else {
+                        html += `<li><strong>${displayKey}:</strong> ${value}</li>`;
+                    }
+                }
+            }
+            
+            html += '</ul></div>';
+            reviewDetails.innerHTML = html;
+            
+            // Update and display review counter
+            let counter = localStorage.getItem('reviewCounter') || 0;
+            counter = parseInt(counter) + 1;
+            localStorage.setItem('reviewCounter', counter);
+            document.getElementById('reviewCounter').textContent = counter;
+        });
+    </script>
+</body>
+</html>
