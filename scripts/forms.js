@@ -1,15 +1,30 @@
-// Product data array
+
 const products = [
-    { id: "prod001", name: "Ultra HD Smart TV" },
-    { id: "prod002", name: "Wireless Noise-Canceling Headphones" },
-    { id: "prod003", name: "Smartphone Pro Max" },
-    { id: "prod004", name: "4K Action Camera" },
-    { id: "prod005", name: "Ergonomic Office Chair" },
-    { id: "prod006", name: "Air Fryer Oven" },
-    { id: "prod007", name: "Fitness Smartwatch" },
-    { id: "prod008", name: "Bluetooth Speaker" },
-    { id: "prod009", name: "Gaming Laptop" },
-    { id: "prod010", name: "Robot Vacuum Cleaner" }
+  {
+    id: "fc-1888",
+    name: "flux capacitor",
+    averagerating: 4.5
+  },
+  {
+    id: "fc-2050",
+    name: "power laces",
+    averagerating: 4.7
+  },
+  {
+    id: "fs-1987",
+    name: "time circuits",
+    averagerating: 3.5
+  },
+  {
+    id: "ac-2000",
+    name: "low voltage reactor",
+    averagerating: 3.9
+  },
+  {
+    id: "jj-1969",
+    name: "warp equalizer",
+    averagerating: 5.0
+  }
 ];
 
 // Populate product select options
