@@ -9,63 +9,55 @@
     <p>Rock Paper Scissors</p>
     <!-- use Math.random() to automatically generate numbers from between 0 to 1-->
     <button onclick="
-      const computerMove = pickComputerMove();
-
-      let result = '';
-
-      /* Comparing user's move to the computer's move. */
-      if (computerMove === 'rock') {
-      result = 'Tie.';
-      } else if (computerMove === 'paper') {
-       result = 'You Lose!';
-       } else if (computerMove === 'scissors') {
-       result = 'You win';
-       }
-
-       /* Displaying result*/ 
-       alert(`You pick rock, Computer picked ${computerMove}. ${result}.`)
-
+      playGame('rock');
     ">Rock</button>
 
     <button onclick="
-        const computerMove = pickComputerMove();
-
-        let result = '';
-
-        /* Comparing user's move to the computer's move. */
-        if (computerMove === 'rock') {
-        result = 'You Win!.';
-        } else if (computerMove === 'paper') {
-        result = 'Tie.';
-        } else if (computerMove === 'scissors') {
-        result = 'You Lose!';
-        }
-
-        /* Displaying result*/ 
-        alert(`You pick Paper, Computer picked ${computerMove}. ${result}.`)
-
+      playGame('paper');
     ">Papper</button>
 
     <button onclick="
-        const computerMove = pickComputerMove();
-        let result = '';
-
-        /* Comparing user's move to the computer's move. */
-        if (computerMove === 'rock') {
-        result = 'You Lose.';
-        } else if (computerMove === 'paper') {
-        result = 'You Win!.';
-        } else if (computerMove === 'scissors') {
-        result = 'Tie.';
-      }
-
-        /* Displaying result*/ 
-        alert(`You pick Scissors, Computer picked ${computerMove}. ${result}.`)
-
+      playGame('scissors');
     ">Scissors</button>
     <script>
       /* This code sections the numbers between 0 to 1 into 3 parts, this enable the algorithm decide which number falls under each category(rock, paper or scissors). If the random number falls between 0 to 1/3 the number automatically falls under the rock category and that is what the computer will choose. If a the random number falls between 1/3 to 2/3 paper is selected by the computer, and if a random number is selected and it falls betweeen 2/3 to 3/3 scissors is chosen. */
+      function playGame (playerMove) {
+        const computerMove = pickComputerMove();
+        let result = '';
 
+        if (playerMove === 'scissors') {
+              /* Comparing user's move to the computer's move. */
+            if (computerMove === 'rock') {
+            result = 'You Lose.';
+            } else if (computerMove === 'paper') {
+            result = 'You Win!.';
+            } else if (computerMove === 'scissors') {
+            result = 'Tie.';
+          }
+
+        } else if (playerMove === 'paper') {
+          if (computerMove === 'rock') {
+            result = 'You Win!.';
+            } else if (computerMove === 'paper') {
+            result = 'Tie.';
+            } else if (computerMove === 'scissors') {
+            result = 'You Lose!';
+            }
+            
+        } else if (playerMove === 'rock') {
+          if (computerMove === 'rock') {
+            result = 'Tie.';
+            } else if (computerMove === 'paper') {
+            result = 'You Lose!';
+            } else if (computerMove === 'scissors') {
+            result = 'You Win!.';
+            }
+        }
+
+        /* Displaying result*/ 
+        alert(`You pick ${playerMove}, Computer picked ${computerMove}. ${result}.`);
+      }
+      
       function pickComputerMove() {
         const randomNumber = Math.random();
 
