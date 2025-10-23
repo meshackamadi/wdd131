@@ -6,27 +6,27 @@
   <title>Mesh Calculator</title>
 </head>
 <body>
-  <button onclick="calculaton += 1; 
-  console.log(`calculation; ${calculaton}`);"
+  <button onclick="calculation += '1'; 
+  console.log(`calculation; ${calculation}`);"
   >1</button>
 
-  <button onclick="calculaton += 2; 
-  console.log(`calculation; ${calculaton}`);"
+  <button onclick="calculation += '2'; 
+  console.log(`calculation; ${calculation}`);"
   >2</button>
 
-  <button onclick="calculaton += 3; 
-  console.log(`calculation; ${calculaton}`);"
+  <button onclick="calculation += '3'; 
+  console.log(`calculation; ${calculation}`);"
   >3</button>
 
-  <button onclick="calculaton += 4; 
-  console.log(`calculation; ${calculaton}`);"
+  <button onclick="calculation += '4'; 
+  console.log(`calculation; ${calculation}`);"
   >4</button>
 
-  <button onclick="calculaton += +; 
-  console.log(`calculation; ${calculaton}`);"
+  <button onclick="calculation += '+';
+  console.log(`calculation; ${calculation}`);"
   >+</button>
 
-  <button onclick="eval(calculation);">=</button>
+  <button onclick="calculation = eval(calculation); console.log(`Result: ${calculation}`)">=</button>
 
   <script>
     let calculation = '';
