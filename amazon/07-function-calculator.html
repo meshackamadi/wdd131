@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesh Calculator</title>
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    /* Calculator container */
+    .calculator {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 260px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+    #display {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 15px;
+      font-size: 20px;
+      text-align: right;
+      padding: 5px;
+      border: 2px solid #333;
+      border-radius: 8px;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+     button:hover {
+      background-color: #0056b3;
+    }
+    button {
+      height: 50px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      transition: background 0.2s ease;
+    }
+    /* Special buttons */
+    .equal {
+      background-color: #28a745;
+    }
+    
+    .equal:hover {
+      background-color: #1e7e34;
+    }
+
+    .clear {
+      background-color: #dc3545;
+    }
+
+    .clear:hover {
+      background-color: #a71d2a;
+    }
+</style>
+</head>
+<body>
+  <div class="calculator">
+    <div id="display"></div>
+
+  <h2>Mesh Calculator</h2>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button onclick="updateCalculation('7')">7</button>
+      <button onclick="updateCalculation('8')">8</button>
+      <button onclick="updateCalculation('9')">9</button>
+      <button onclick="updateCalculation('+')">+</button>
+
+      <button onclick="updateCalculation('4')">4</button>
+      <button onclick="updateCalculation('5')">5</button>
+      <button onclick="updateCalculation('6')">6</button>
+      <button onclick="updateCalculation('*')">×</button>
+
+      <button onclick="updateCalculation('1')">1</button>
+      <button onclick="updateCalculation('2')">2</button>
+      <button onclick="updateCalculation('3')">3</button>
+      <button onclick="updateCalculation('-')">−</button>
+
+      <button onclick="updateCalculation('0')">0</button>
+      <button onclick="updateCalculation('.')">.</button>
+      <button class="clear" onclick="clearDisplay()">C</button>
+      <button class="equal" onclick="calculateResult()">=</button>
+    </div>
+  </div>
+
+
+  <script>
+    let calculation = '';
+
+    function updateCalculation(value) {
+      calculation += value;
+      document.getElementById('display').innerText = calculation;
+    }
+
+    function calculateResult() {
+      try {
+        calculation = eval(calculation);
+        document.getElementById('display').innerText = calculation;
+      } catch (error) {
+        document.getElementById('display').innerText = 'Error';
+      }
+    }
+
+    function clearDisplay() {
+      calculation = '';
+      document.getElementById('display').innerText = '';
+    }
+  </script>
+</body>
+</html>
